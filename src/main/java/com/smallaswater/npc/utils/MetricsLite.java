@@ -1,6 +1,7 @@
 package com.smallaswater.npc.utils;
 
 import cn.nukkit.Server;
+import cn.nukkit.config.ServerPropertiesKeys;
 import cn.nukkit.plugin.Plugin;
 import cn.nukkit.plugin.service.NKServiceManager;
 import cn.nukkit.plugin.service.RegisteredServiceProvider;
@@ -181,7 +182,7 @@ public class MetricsLite {
     private JsonObject getServerData() {
         // Minecraft specific data
         int playerAmount = Server.getInstance().getOnlinePlayers().size();
-        int onlineMode = Server.getInstance().getPropertyBoolean("xbox-auth", true) ? 1 : 0;
+        int onlineMode = Server.getInstance().getProperties().get(ServerPropertiesKeys.XBOX_AUTH, true) ? 1 : 0;
         String softwareVersion = Server.getInstance().getApiVersion() + " (MC: " + Server.getInstance().getVersion().substring(1) + ")";
         String softwareName = Server.getInstance().getName();
         

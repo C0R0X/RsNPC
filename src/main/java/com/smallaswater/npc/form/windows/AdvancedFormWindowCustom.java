@@ -32,11 +32,11 @@ public class AdvancedFormWindowCustom extends FormWindowCustom {
     }
 
     public AdvancedFormWindowCustom(String title, List<Element> contents, String icon) {
-        super(title, contents, icon);
+        super(title);
     }
 
     public AdvancedFormWindowCustom(String title, List<Element> contents, ElementButtonImageData icon) {
-        super(title, contents, icon);
+        super(title);
     }
 
     public AdvancedFormWindowCustom onResponded(@NotNull BiConsumer<FormResponseCustom, Player> listener) {
